@@ -20,7 +20,7 @@ class Zoo() {
     fun getUnlimitedAdopters(): List<String> {
         val adoptions = this.animals.map { it.adoptions }.flatten()
         val unlimitedAdoptions = adoptions.filterIsInstance<UnlimitedAdoption>()
-        return unlimitedAdoptions.map { unlimitedAdoption -> unlimitedAdoption.name }
+        return unlimitedAdoptions.map { unlimitedAdoption -> unlimitedAdoption.name }.distinct()
     }
 
     fun getNumberOfGreetingParrots(words: List<String>): Int {
